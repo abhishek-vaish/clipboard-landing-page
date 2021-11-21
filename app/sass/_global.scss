@@ -1,0 +1,414 @@
+@import "variable";
+@import "mixins";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Bai Jamjuree";
+}
+
+body {
+  background-image: url("../../images/bg-header-desktop.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @include mobile-breakpoint {
+    background-image: url("../../images/bg-header-mobile.png");
+  }
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: toRem(126);
+  height: 100vh;
+  @include mobile-breakpoint {
+    padding: 0 toRem(24);
+    padding-top: toRem(126);
+  }
+  .content {
+    max-width: toRem(686);
+    text-align: center;
+    h1 {
+      font-size: toRem(43);
+      color: map-get($map: $neutralColor, $key: "DarkGrayishBlue");
+      margin-top: toRem(32);
+      margin-bottom: toRem(14);
+
+      @include mobile-breakpoint {
+        font-size: toRem(30);
+      }
+    }
+
+    p {
+      font-size: toRem(20);
+      color: map-get($map: $neutralColor, $key: "GrayishBlue");
+
+      @include mobile-breakpoint {
+        font-size: toRem(16.3);
+      }
+    }
+  }
+  .download_button {
+    margin-top: toRem(52);
+    @include mobile-breakpoint {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .btn {
+      @include button;
+    }
+    .ios {
+      @include ios;
+      @include mobile-breakpoint {
+        margin-right: toRem(0);
+        margin-bottom: toRem(18);
+      }
+    }
+
+    .mac {
+      @include mac;
+    }
+  }
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  @include mobile-breakpoint {
+    padding: 0 toRem(24);
+    margin-top: toRem(132);
+  }
+  h2 {
+    @include heading__2;
+    @include mobile-breakpoint {
+      text-align: center;
+    }
+  }
+
+  p {
+    @include paragraph__2;
+    @include mobile-breakpoint {
+      font-size: toRem(16);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: toRem(80);
+
+    @include mobile-breakpoint {
+      align-items: center;
+      justify-content: center;
+    }
+
+    .content__image {
+      margin-left: toRem(-30);
+      @include mobile-breakpoint {
+        margin-left: 0;
+      }
+      img {
+        @include mobile-breakpoint {
+          height: toRem(188);
+        }
+      }
+    }
+
+    .content__data {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: flex-start;
+      margin-left: toRem(110);
+      @include mobile-breakpoint {
+        margin-left: 0;
+        margin-top: toRem(46);
+      }
+      h3 {
+        @include heading__3;
+        @include mobile-breakpoint {
+          text-align: center;
+        }
+      }
+      p {
+        font-size: toRem(16);
+        line-height: toRem(26);
+        text-align: left;
+        color: map-get($map: $neutralColor, $key: "GrayishBlue");
+        max-width: toRem(338);
+        @include mobile-breakpoint {
+          text-align: center;
+          max-width: 100%;
+          margin-bottom: toRem(46);
+        }
+      }
+      .data__3 {
+        @include mobile-breakpoint {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+.features__2 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: toRem(152);
+  @include mobile-breakpoint {
+    padding: 0 toRem(24);
+  }
+  h2 {
+    @include heading__2;
+    @include mobile-breakpoint {
+      text-align: center;
+    }
+  }
+  p {
+    @include paragraph__2;
+    margin-bottom: toRem(100);
+    @include mobile-breakpoint {
+      font-size: toRem(16);
+    }
+  }
+  img {
+    @include mobile-breakpoint {
+      height: toRem(188);
+    }
+  }
+}
+
+.sponsors {
+  margin-top: toRem(80);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include mobile-breakpoint {
+    padding: 0 toRem(24);
+  }
+  h2 {
+    @include heading__2;
+    text-align: center;
+  }
+  p {
+    @include paragraph__2;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .category {
+    .sponsors__list {
+      max-width: toRem(1112);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      margin-top: toRem(76);
+
+      .list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        @include mobile-breakpoint {
+          margin-bottom: toRem(48);
+        }
+
+        img {
+          margin-bottom: toRem(46);
+        }
+
+        h3 {
+          @include heading__3;
+        }
+
+        p {
+          font-size: toRem(16);
+          line-height: toRem(26);
+          max-width: toRem(330);
+        }
+      }
+
+      .list__1 {
+        img {
+          margin-bottom: toRem(36);
+        }
+      }
+
+      .list__3 {
+        @include mobile-breakpoint {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  .category__logo {
+    .sponsors__logo {
+      max-width: toRem(1112);
+      margin: 0 auto;
+      margin-top: toRem(150);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      @include mobile-breakpoint {
+        flex-direction: column;
+        img {
+          margin-bottom: toRem(48);
+        }
+      }
+    }
+  }
+}
+
+.clipboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: toRem(152);
+  @include mobile-breakpoint {
+    padding: 0 toRem(24);
+  }
+  h2 {
+    @include heading__2;
+    @include mobile-breakpoint {
+      text-align: center;
+    }
+  }
+  p {
+    @include paragraph__2;
+    @include mobile-breakpoint {
+      font-size: toRem(17);
+    }
+  }
+
+  .button {
+    margin-top: toRem(52);
+    @include mobile-breakpoint {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .btn {
+      @include button;
+    }
+
+    .ios {
+      @include ios;
+      @include mobile-breakpoint {
+        margin-right: 0;
+        margin-bottom: toRem(18);
+      }
+    }
+
+    .mac {
+      @include mac;
+    }
+  }
+}
+
+footer {
+  background-color: #f5f6f8;
+  .footer__panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: toRem(1125);
+    margin: 0 auto;
+    margin-top: toRem(152);
+    padding: toRem(42) 0;
+    @include mobile-breakpoint {
+      flex-direction: column;
+    }
+
+    .left {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      @include mobile-breakpoint {
+        flex-direction: column;
+        margin-bottom: toRem(42);
+      }
+      .logo__image {
+        img {
+          width: toRem(68);
+          margin-right: toRem(130);
+          @include mobile-breakpoint {
+            margin-right: 0;
+            margin-bottom: toRem(48);
+          }
+        }
+      }
+      .option {
+        .footer__option {
+          display: flex;
+          flex-wrap: wrap;
+          @include mobile-breakpoint {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+          }
+          ul {
+            list-style: none;
+            margin-right: toRem(80);
+            @include mobile-breakpoint {
+              margin-bottom: toRem(28);
+              text-align: center;
+              margin-right: 0;
+            }
+            li {
+              &:first-child {
+                margin-bottom: toRem(20);
+                @include mobile-breakpoint {
+                  margin-bottom: 0;
+                }
+                @include mobile-breakpoint {
+                  margin-bottom: toRem(28);
+                }
+              }
+              a {
+                text-decoration: none;
+                color: map-get($map: $neutralColor, $key: "DarkGrayishBlue");
+
+                &:hover {
+                  color: map-get($map: $primaryColor, $key: "StrongCyan");
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .right {
+      svg {
+        margin-right: toRem(20);
+        cursor: pointer;
+        path {
+          &:hover {
+            fill: map-get($map: $primaryColor, $key: "StrongCyan");
+          }
+        }
+        @include mobile-breakpoint {
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}

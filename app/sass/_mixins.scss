@@ -1,0 +1,49 @@
+@mixin button {
+  border: none;
+  min-width: toRem(230);
+  min-height: toRem(56);
+  border-radius: toRem(50);
+  color: #fff;
+  font-weight: 600;
+  font-size: toRem(18);
+  cursor: pointer;
+}
+
+@mixin ios {
+  background-color: map-get($map: $primaryColor, $key: "StrongCyan");
+  box-shadow: toRem(0) toRem(5) toRem(20) toRem(0)
+    map-get($map: $primaryColor, $key: "StrongCyan");
+  border-bottom: toRem(4) solid #61b2a3;
+  margin-right: toRem(16);
+}
+
+@mixin mac {
+  background-color: map-get($map: $primaryColor, $key: "LightBlue");
+  box-shadow: toRem(0) toRem(5) toRem(20) toRem(0)
+    map-get($map: $primaryColor, $key: "LightBlue");
+  border-bottom: toRem(4) solid #7e87e2;
+}
+
+@mixin heading__2 {
+  font-size: toRem(32);
+  color: map-get($map: $neutralColor, $key: "DarkGrayishBlue");
+  margin-bottom: toRem(32);
+}
+
+@mixin paragraph__2 {
+  font-size: toRem(18);
+  color: map-get($map: $neutralColor, $key: "GrayishBlue");
+  max-width: toRem(694);
+  text-align: center;
+}
+
+@mixin heading__3 {
+  color: map-get($map: $neutralColor, $key: "DarkGrayishBlue");
+  margin-bottom: toRem(24);
+}
+
+@mixin mobile-breakpoint {
+  @media (max-width: 375px) {
+    @content;
+  }
+}

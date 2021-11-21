@@ -1,0 +1,16 @@
+@use "sass:math";
+
+@function toRem($value) {
+  $remValue: math.div($value, 16) + rem;
+  @return $remValue;
+}
+
+$primaryColor: (
+  "StrongCyan": hsl(171, 66%, 44%),
+  "LightBlue": hsl(233, 100%, 69%),
+);
+
+$neutralColor: (
+  "DarkGrayishBlue": hsl(210, 10%, 33%),
+  "GrayishBlue": hsl(201, 11%, 66%),
+);
